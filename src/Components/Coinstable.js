@@ -20,7 +20,10 @@ import {
   ThemeProvider,
   Typography,
 } from "@material-ui/core";
-import { numberWithCommas } from "./Banner/Carousel";
+
+export function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
@@ -40,6 +43,7 @@ const CoinsTable = () => {
   console.log(coins);
   useEffect(() => {
     fetchCoins();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currency]);
 
   const darkTheme = createTheme({
