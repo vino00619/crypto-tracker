@@ -12,6 +12,7 @@ const CoinInfo = ({ coin }) => {
   const [days, setDays] = useState(1);
 
   const { currency } = CryptoState();
+  // eslint-disable-next-line no-unused-vars
   const [flag,setflag] = useState(false);
 
   const fetchHistoricData = async () => {
